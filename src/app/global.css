@@ -1,0 +1,14 @@
+@layer base {
+    @font-face {
+        font-family: 'Elden';
+        src: url('../../public/fonts/MagicSchoolOne.ttf');
+    }
+
+    @font-face {
+        font-family: 'Arcane';
+        src: url('../../public/fonts/Arcane\ Nine.otf');
+    }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
