@@ -1,6 +1,6 @@
 import Main from '../components/Main';
 
-export default function Home({ children } : { children: React.ReactNode }) {
+export default function Home() {
     return (
           <Main type={'armor'}/>
     )
