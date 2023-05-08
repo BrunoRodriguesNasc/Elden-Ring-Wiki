@@ -13,9 +13,7 @@ export default function ArmorDetails({ params }: ArmorDetailsProps) {
 
   useEffect(() => {
     getById(params.id);
-  }, [])
-
-  
+  }, [params.id, getById])
 
   return (
     <div className="flex mx-auto my-24 items-center h-3/6 w-11/12 lg:w-4/6  md:w-2/6 bg-opacity-75 text-amber-200 bg-gray-900 text-center font-bold font-arcane">

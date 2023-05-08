@@ -1,0 +1,12 @@
+{
+    "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:@typescript-eslint/recommended"],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "project": "./tsconfig.json"
+    },
+    "rules": {
+      // suas regras aqui
+    }
+  }
