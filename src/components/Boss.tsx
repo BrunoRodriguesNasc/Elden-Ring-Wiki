@@ -1,12 +1,12 @@
 'use client';
-import { useArmor } from "@/hooks/useArmor";
+import { useBoss } from "@/hooks";
 import React, { useEffect, useState } from "react";
-import { IArmor } from "@/interfaces";
+import { IBoss } from "@/interfaces";
 import { ItemList } from "./ItemList";
 
 export default function Armors() {
-    const { armors, getAll } = useArmor();
-    const [filteredArmors, setFilteredArmors] = useState<IArmor[]>();
+    const { bosses, getAll } = useBoss();
+    const [filteredArmors, setFilteredArmors] = useState<IBoss[]>();
     const [offset, setOffset] = useState<number>(0);
 
     useEffect(() => {
@@ -14,15 +14,15 @@ export default function Armors() {
     }, [getAll, offset])
 
     const handleChange = (value: string) => {
-        const filtered = armors?.filter(armor => armor.name.toLowerCase().includes(value.toLowerCase()));
+        const filtered = bosses?.filter(boss => boss.name.toLowerCase().includes(value.toLowerCase()));
         setFilteredArmors(filtered);
     }
 
     const handleOffset = (signal: string) => {
-        if (offset < 5 && offset > 0) {
+        if (offset < 2 && offset > 0) {
             signal === '+' ? setOffset(offset + 1) : setOffset(offset - 1);
         }
-        if (offset === 5 && signal === '-') {
+        if (offset === 2 && signal === '-') {
             setOffset(offset - 2)
         } else if (offset === 0 && signal === '+') {
             setOffset(offset + 1)
@@ -30,6 +30,6 @@ export default function Armors() {
     }
 
     return (
-            <ItemList handleChange={handleChange} handleOffset={handleOffset} items={filteredArmors || armors} type="Armor" />
+            <ItemList handleChange={handleChange} handleOffset={handleOffset} items={filteredArmors || bosses} type="Boss" />
     );
 };

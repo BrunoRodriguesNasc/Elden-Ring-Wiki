@@ -1,4 +1,4 @@
-import { IWeapon, IWeaponData } from "@/interfaces";
+import { IWeapon } from "@/interfaces";
 import { ItemService } from "@/services/ItemService";
 import { useCallback, useState } from "react";
 
@@ -7,7 +7,7 @@ export const useWeapon = () => {
     const [weapon, setWeapon] = useState<IWeapon>();
 
     const getAll = useCallback(async (offset: number, limit: number) => {
-        const { data, status } = await ItemService.getAllWeapons(offset, limit);
+        const { data, status } = await ItemService.getWeapons(offset, limit);
         if (status !== 200) throw new Error('Error');
         setWeapons(data.data);
     }, []);

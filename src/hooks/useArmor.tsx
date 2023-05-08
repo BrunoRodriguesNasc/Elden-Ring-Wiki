@@ -7,7 +7,7 @@ export const useArmor = () => {
     const [armor, setArmor ] = useState<IArmor>();
 
     const getAll = useCallback(async (offset: number, limit: number) => {
-        const { data, status } = await ItemService.getAllArmor(offset, limit);
+        const { data, status } = await ItemService.getArmors(offset, limit);
         if (status !== 200) throw new Error('Error');
         setArmors(data.data);
     }, []);
