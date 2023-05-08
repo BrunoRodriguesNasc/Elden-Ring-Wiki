@@ -43,7 +43,6 @@ Se você deseja contribuir para este projeto, siga as instruções abaixo:
 ## De uma olhada no resultado!
 
 - https://eldenringstudy.netlify.app/
-- Lembrando que não está finalizado.
   
 
 ## Conclusão 🎉
